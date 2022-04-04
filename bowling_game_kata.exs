@@ -72,11 +72,7 @@ defmodule BowlingGame.Tests do
     %{game: game}
   end
 
-  test "default score", %{game: game} do
-    assert BowlingGame.score(game) === 0
-  end
-
-  test "rolls", %{game: game} do
+  test "rolling", %{game: game} do
     for _ <- 1..20, do: BowlingGame.roll(game, 1)
 
     assert BowlingGame.score(game) === 20
